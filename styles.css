@@ -1,0 +1,192 @@
+/* ============================================
+   Poupa Brasil — Dashboard Principal
+   Autor: Rafael Giovany Pereira da Silva
+   ============================================ */
+
+/* ── Tokens ── */
+:root {
+  --bg-base:     #030712;
+  --bg-card:     #111827;
+  --bg-sidebar:  #0d1117;
+  --border:      #1f2937;
+  --green:       #4ade80;
+  --green-dim:   #16a34a;
+  --gold:        #eab308;
+  --red:         #f87171;
+  --text-muted:  #6b7280;
+  --text-soft:   #9ca3af;
+  --radius-card: 0.75rem;
+}
+
+/* ── Base ── */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--green-dim), #064e3b);
+}
+
+.nav-label {
+  color: var(--text-muted);
+}
+
+.nav-item {
+  color: var(--text-soft);
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.nav-item--active {
+  background-color: #14532d33;
+  color: var(--green);
+  border-left: 3px solid var(--green);
+}
+
+.user-card {
+  background-color: #1f2937;
+}
+
+.avatar {
+  background: linear-gradient(135deg, var(--green-dim), #065f46);
+}
+
+.plan-label {
+  color: var(--green);
+}
+
+/* ── Topbar ── */
+.topbar {
+  background-color: var(--bg-base);
+}
+
+.month-btn {
+  background-color: #1f2937;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background 0.15s;
+  cursor: pointer;
+  color: #d1d5db;
+}
+
+.month-btn:hover {
+  background-color: #374151;
+}
+
+.bell-btn {
+  background-color: #1f2937;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.bell-btn:hover {
+  background-color: #374151;
+}
+
+/* ── KPI Cards ── */
+.kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.kpi-label {
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.kpi-up   { color: var(--green); }
+.kpi-down { color: var(--red); }
+
+.kpi-card--gold {
+  border-color: #713f1240;
+  background: linear-gradient(135deg, #1c1100, #111827);
+}
+
+/* ── Accent colors ── */
+.accent-green { color: var(--green); }
+.accent-gold  { color: var(--gold); }
+.accent-red   { color: var(--red); }
+
+/* ── Bar Chart ── */
+.bar-chart {
+  width: 100%;
+}
+
+.bar-group {
+  min-width: 0;
+}
+
+.bar-entry {
+  min-width: 10px;
+  transition: opacity 0.2s;
+}
+
+.bar-entry:hover { opacity: 0.8; }
+
+.bar-entry--in  { background-color: var(--green-dim); }
+.bar-entry--out { background-color: #7f1d1d; }
+
+.bar-label {
+  font-size: 0.68rem;
+}
+
+/* ── Donut Chart ── */
+.donut-svg {
+  display: block;
+}
+
+.donut-track {
+  stroke: #1f2937;
+}
+
+.donut-center {
+  pointer-events: none;
+}
+
+/* ── Transaction rows ── */
+.tx-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* ── Scrollbar ── */
+main::-webkit-scrollbar { width: 6px; }
+main::-webkit-scrollbar-track { background: transparent; }
+main::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+/* ── Responsive mobile ── */
+@media (max-width: 767px) {
+  body { overflow: auto; }
+
+  main {
+    padding: 1rem;
+  }
+
+  .kpi-card {
+    padding: 0.875rem;
+  }
+
+  .bar-chart {
+    height: 7rem;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
